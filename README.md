@@ -21,5 +21,6 @@
 | 5 | (1046, 850)  | (202, 825) |
 | 6 | (1266,492)   | (376, 463) |
 | 7 | (1192, 426)  | (318, 406) |
+![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/mapping_corp.jpg)
 
 
