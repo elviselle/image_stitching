@@ -26,8 +26,8 @@
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/mapping_corp.png)
 
 ## Affine Transformation
-
-$$\begin{bmatrix} x' \\\ y' \end{bmatrix}$$
+$$E=mc^2$$
+$$\begin{bmatrix} x' \\ y' \end{bmatrix}$$
 
 
 
