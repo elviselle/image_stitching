@@ -94,6 +94,7 @@ numpy.libalg package 可以解線性方程
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/interception.png)
 
 #### Linear Blending 後好很多。交界處看不太出來了，雖然還有些鬼影。
+#### 交集處，若點靠近左圖，左圖顏色的權重就取大一點，若靠近右圖，右圖顏色的權重就取大一點。
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/blending.png)
 
 ## 拼接結果
