@@ -90,8 +90,12 @@ numpy.libalg package 可以解線性方程
         53 * 0.2 * 0.3
 
 # Linear Blending
-#### 拼起來後，有點糟糕。接的很不順。
+#### 拼起來後，交界處很糟糕！接的很不順。
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/interception.png)
 
-#### Linear Blending後好很多。雖然還有些鬼影。
+#### Linear Blending 後好很多。交界處看不太出來了，雖然還有些鬼影。
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/blending.png)
+
+## 拼接結果
+![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/merged.jpg)
+
