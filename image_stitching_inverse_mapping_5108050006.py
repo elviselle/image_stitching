@@ -152,7 +152,7 @@ merged = merged.astype(np.uint8)
 # minInColumns = np.amin(merged[:,:,0], axis=0)
 
 cv2.imshow("res", merged)            
-cv2.imwrite("merged_without_blending.jpg",merged)
+cv2.imwrite("merged.jpg",merged)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
