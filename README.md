@@ -1,5 +1,5 @@
 # 影像拼接
-### 自行計算 Affine Transformation, Binear Interpolation 與 Linear Blending
+### 自行計算 Affine Transformation, Bilinear Interpolation 與 Linear Blending
 
 ## 原始影像 - 輕井澤王子飯店前
 > 左
@@ -64,4 +64,6 @@ numpy.libalg package 可以解線性方程
 
 #### Inverse Mapping 指由要合成照片的空間(target)上的每一個點，去算它在 Source (pic2) 座標系的哪個位置。如果可以落在 source 的影像範圍內，就取它的顏色過來填到 target 上。可以避免 Forward Mapping 時 target 有空隙沒填到顏色。
 
+## Bilinear Interpolation
+#### 由 target 空間轉換到 source 空間時，算出來的座標會是小數。這時，到底要取 source 的哪個顏色來填到 target 呢？就會用到 Bilinear Interpolation。
 
