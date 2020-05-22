@@ -27,6 +27,8 @@
 
 ## Affine Transformation
 
+- <img src="https://latex.codecogs.com/gif.latex?O_t=\text { Onset event at time bin } t " /> 
+
 $$E=mc^2$$
 
 $$\begin{bmatrix} x' \\ y' \end{bmatrix}$$
