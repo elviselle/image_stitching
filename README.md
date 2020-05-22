@@ -68,7 +68,7 @@ numpy.libalg package 可以解線性方程
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/merged_preprocess.jpg)
 
 #### Inverse Mapping 指由要合成照片的空間(target)上的每一個點，去算它在 Source (pic2) 座標系的哪個位置。如果可以落在 source 的影像範圍內，就取它的顏色過來填到 target 上。可以避免 Forward Mapping 時 target 有空隙沒填到顏色。
-![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/inverse_mapping.jpeg)
+![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/inverse_mapping.jpg)
 
 
 ## Bilinear Interpolation
