@@ -30,6 +30,10 @@
 <!-- \begin{bmatrix}x'\\y'\end{bmatrix} = \begin{bmatrix}a & b & c\\ d & e & f\end{bmatrix} \begin{bmatrix}x\\y\\1\end{bmatrix} --> 
 <img src="https://latex.codecogs.com/gif.latex?%5Cbegin%7Bbmatrix%7Dx%27%5C%5Cy%27%5Cend%7Bbmatrix%7D%20%3D%20%5Cbegin%7Bbmatrix%7Da%20%26%20b%20%26%20c%5C%5C%20d%20%26%20e%20%26%20f%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7Dx%5C%5Cy%5C%5C1%5Cend%7Bbmatrix%7D" /> 
 
+<img src="https://latex.codecogs.com/gif.latex?x%27%3D%20ax%20%2B%20by%20%2B%20c" /> 
+<img src="https://latex.codecogs.com/gif.latex?y%27%3D%20dx%20%2B%20ey%20%2B%20f" /> 
+
+
 #### 要解a, b, c, d, e, f，需要 6 個關係式，而三個點會有 6 個式子。可再整理成下面的聯位方程，然後解出 6 個未知數。以組合A為例：
 
 <!-- \begin{bmatrix}369\\393\\209\\459\\251\\181\end{bmatrix} = \begin{bmatrix}1257 & 411 & 0 & 0 & 1 & 0\\0&0&1257& 411&0&1\\ 1071& 480& 0 & 0 & 1 & 0\\0&0&1071& 480&0&1 \\1112& 192& 0 & 0 & 1 & 0\\0&0&1112& 192&0&1 \\\end{bmatrix} \begin{bmatrix}a\\b\\c\\d\\e\\f\end{bmatrix} --> 
