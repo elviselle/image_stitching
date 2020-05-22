@@ -130,6 +130,8 @@ for y in range(merged_height):
                 weight =  (x-812) / (1280-812)  # blending 計算，這裡也有點鳥，寫死了，手工找了交集範圍
                 # weight =  (x-812) / (1280-812) * 0.8    # for testing
                 # weight =  (x-812) / (1280-812) * 0.5    # for testing
+                
+                weight = 0.5
 
                 merged[y, x, 0] = int(merged[y, x, 0] * (1-weight) + int(itp_r) * weight)  # blending 計算
                 merged[y, x, 1] = int(merged[y, x, 1] * (1-weight) + int(itp_g) * weight)  # blending 計算
@@ -152,7 +154,7 @@ merged = merged.astype(np.uint8)
 # minInColumns = np.amin(merged[:,:,0], axis=0)
 
 cv2.imshow("res", merged)            
-cv2.imwrite("merged.jpg",merged)
+cv2.imwrite("merged_half_blending.jpg",merged)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
