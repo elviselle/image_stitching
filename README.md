@@ -43,15 +43,15 @@
 numpy.libalg package可以解線性方程
 
     target = np.array(
-    [[1257, 411+h_offset, 0, 0, 1, 0], 
-     [0, 0, 1257, 411+h_offset, 0, 1], 
-     [1071, 480+h_offset, 0, 0, 1, 0], 
-     [0, 0, 1071, 480+h_offset, 0, 1],
-     [1112, 192+h_offset, 0, 0, 1, 0], 
-     [0, 0, 1112, 192+h_offset, 0, 1]])
+    [[1257, 411, 0, 0, 1, 0], 
+     [0, 0, 1257, 411, 0, 1], 
+     [1071, 480, 0, 0, 1, 0], 
+     [0, 0, 1071, 480, 0, 1],
+     [1112, 192, 0, 0, 1, 0], 
+     [0, 0, 1112, 192, 0, 1]])
     src = np.array([369,393,209,459,251,181])
     
-    param = np.linalg.solve(target,src)  # 解聯立方程 - Affine Transformation
+    param = np.linalg.solve(target, src)  # 解聯立方程 - Affine Transformation
 
 
 
