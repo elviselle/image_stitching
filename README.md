@@ -21,8 +21,8 @@
 | 5 | (1046, 850)  | (202, 825) |   | V |   | V |
 | 6 | (1266,492)   | (376, 463) |   |   | V | V |
 | 7 | (1192, 426)  | (318, 406) |   |   | V |   |
+#### 每三點可決定一個 Affine Transform，進行四個組合測試，看哪個組合拼接效果比較好
 
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/mapping_corp.png)
-### 每三點可決定一個 Affine Transform，進行四個組合測試，看哪個組合拼接效果比較好
 
 
