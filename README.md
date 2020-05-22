@@ -8,5 +8,5 @@
 > 右
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/IMG_5732.JPG)
 
-## 拼接影像
+## 拼接結果
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/merged.jpg)
