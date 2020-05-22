@@ -26,13 +26,12 @@
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/mapping_corp.png)
 
 ## Affine Transformation
-
+#### 座標轉換
 <!-- \begin{bmatrix}x'\\y'\end{bmatrix} = \begin{bmatrix}a & b & c\\ d & e & f\end{bmatrix} \begin{bmatrix}x\\y\\1\end{bmatrix} --> 
 <img src="https://latex.codecogs.com/gif.latex?%5Cbegin%7Bbmatrix%7Dx%27%5C%5Cy%27%5Cend%7Bbmatrix%7D%20%3D%20%5Cbegin%7Bbmatrix%7Da%20%26%20b%20%26%20c%5C%5C%20d%20%26%20e%20%26%20f%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7Dx%5C%5Cy%5C%5C1%5Cend%7Bbmatrix%7D" /> 
 
 <img src="https://latex.codecogs.com/gif.latex?x%27%3D%20ax%20%2B%20by%20%2B%20c" /> 
 <img src="https://latex.codecogs.com/gif.latex?y%27%3D%20dx%20%2B%20ey%20%2B%20f" /> 
-
 
 #### 要解a, b, c, d, e, f，需要 6 個關係式，而三個點會有 6 個式子。可再整理成下面的聯位方程，然後解出 6 個未知數。
 #### 以組合A為例：
@@ -48,13 +47,19 @@ numpy.libalg package 可以解線性方程
          [1071, 480, 0, 0, 1, 0], 
          [0, 0, 1071, 480, 0, 1],
          [1112, 192, 0, 0, 1, 0], 
-         [0, 0, 1112, 192, 0, 1]])
-    src = np.array([369,393,209,459,251,181])
+         [0, 0, 1112, 192, 0, 1]])  #左圖座標
+    src = np.array([369,393,209,459,251,181])  #右圖座標
     
     param = np.linalg.solve(target, src)  # 解聯立方程 - 求出座標轉換矩陣
     pring(param)
 
 解出 [a, b, e, d, e, f] = [ 8.51061314e-01 -2.46752991e-02  3.42931473e-03  9.65765979e-01 -6.90395771e+02 -1.78981257e+01 ]
+
+然後，我們可以用這個座標轉換矩陣來計算左圖的某一點，是右圖的哪一點。
+使用 numpy.matmul() 矩陣乘法即可。
+
+    target_point = np.array([[1257,411,0,0,1,0], [0,0,1257,411,0,1]])
+    source_point = np.matmul(target_point, param)  # 計算轉換後之座標，[369, 393]
 
 
 ## Inverse Mapping
