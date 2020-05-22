@@ -27,6 +27,8 @@
 
 ## Affine Transformation
 #### 座標轉換
+(x, y) 乘以座標轉換矩陣，得到新的空間座標 (x', y')
+
 <!-- \begin{bmatrix}x'\\y'\end{bmatrix} = \begin{bmatrix}a & b & c\\ d & e & f\end{bmatrix} \begin{bmatrix}x\\y\\1\end{bmatrix} --> 
 <img src="https://latex.codecogs.com/gif.latex?%5Cbegin%7Bbmatrix%7Dx%27%5C%5Cy%27%5Cend%7Bbmatrix%7D%20%3D%20%5Cbegin%7Bbmatrix%7Da%20%26%20b%20%26%20c%5C%5C%20d%20%26%20e%20%26%20f%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7Dx%5C%5Cy%5C%5C1%5Cend%7Bbmatrix%7D" /> 
 
