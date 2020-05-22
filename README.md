@@ -90,6 +90,7 @@ numpy.libalg package 可以解線性方程
         53 * 0.2 * 0.3
 
 # Linear Blending
+#### 交集處全用 Source Image 顏色蓋上去。
 #### 拼起來後，交界處很糟糕！接的很不順。
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/interception.png)
 
