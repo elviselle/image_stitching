@@ -98,6 +98,6 @@ numpy.libalg package 可以解線性方程
 #### 交集處，若點靠近左圖，左圖顏色的權重就取大一點，若靠近右圖，右圖顏色的權重就取大一點。
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/blending.png)
 
-## 拼接結果
+## 拼接結果 again
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/merged.jpg)
 
