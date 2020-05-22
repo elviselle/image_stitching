@@ -12,7 +12,8 @@
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/merged.jpg)
 
 ## 手動人工在兩張照片中選擇 7 個特徵點
-| (左)IMG_1265.JPG  | (右)IMG_5732.JPG
--- | ------------- | -------------
-1 | (1257, 411)  | (369, 393)
-2 | Content Cell  | Content Cell 
+|     | (左)IMG_1265.JPG  | (右)IMG_5732.JPG |
+| --- | ------------- | ------------- |
+| 1 | (1257, 411)  | (369, 393) |
+| 2 | Content Cell  | Content Cell |
+
