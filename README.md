@@ -27,7 +27,7 @@
 
 ## Affine Transformation
 
-$$\begin{bmatrix} x' \\ y' \end{bmatrix}$$
+$$\begin{bmatrix} x' \\\ y' \end{bmatrix}$$
 
 
 
