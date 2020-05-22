@@ -125,19 +125,23 @@ for y in range(merged_height):
             
             # 照片交集的部份，以 Linear Blending 方式計算顏色比例。
             # 點靠近左邊照片，左邊權重大。點靠近右邊照片，右邊權重大。
-            if merged[y, x, 0] > 0 or merged[y, x, 1] > 0 or merged[y, x, 2] > 0 :   # 3 channel 有一維不是0，表是是交集處。此處有點鳥，應該有更好的判斷方法。
+            # if merged[y, x, 0] > 0 or merged[y, x, 1] > 0 or merged[y, x, 2] > 0 :   # 3 channel 有一維不是0，表是是交集處。此處有點鳥，應該有更好的判斷方法。
 
-                weight =  (x-812) / (1280-812)  # blending 計算，這裡也有點鳥，寫死了，手工找了交集範圍
-                # weight =  (x-812) / (1280-812) * 0.8    # for testing
-                # weight =  (x-812) / (1280-812) * 0.5    # for testing
+            #     weight =  (x-812) / (1280-812)  # blending 計算，這裡也有點鳥，寫死了，手工找了交集範圍
+            #     # weight =  (x-812) / (1280-812) * 0.8    # for testing
+            #     # weight =  (x-812) / (1280-812) * 0.5    # for testing
 
-                merged[y, x, 0] = int(merged[y, x, 0] * (1-weight) + int(itp_r) * weight)  # blending 計算
-                merged[y, x, 1] = int(merged[y, x, 1] * (1-weight) + int(itp_g) * weight)  # blending 計算
-                merged[y, x, 2] = int(merged[y, x, 2] * (1-weight) + int(itp_b) * weight)  # blending 計算
-            else:
-                merged[y, x, 0] = int(itp_r)  # 未在交集內，直接用 binear interpolation 的顏色
-                merged[y, x, 1] = int(itp_g)
-                merged[y, x, 2] = int(itp_b)
+            #     merged[y, x, 0] = int(merged[y, x, 0] * (1-weight) + int(itp_r) * weight)  # blending 計算
+            #     merged[y, x, 1] = int(merged[y, x, 1] * (1-weight) + int(itp_g) * weight)  # blending 計算
+            #     merged[y, x, 2] = int(merged[y, x, 2] * (1-weight) + int(itp_b) * weight)  # blending 計算
+            # else:
+            #     merged[y, x, 0] = int(itp_r)  # 未在交集內，直接用 binear interpolation 的顏色
+            #     merged[y, x, 1] = int(itp_g)
+            #     merged[y, x, 2] = int(itp_b)
+
+            merged[y, x, 0] = int(itp_r)  # 未在交集內，直接用 binear interpolation 的顏色
+            merged[y, x, 1] = int(itp_g)
+            merged[y, x, 2] = int(itp_b)
 
         if x%80 == 0:
             print('.', end="")  #只是輸出計算進度用
@@ -148,7 +152,7 @@ merged = merged.astype(np.uint8)
 # minInColumns = np.amin(merged[:,:,0], axis=0)
 
 cv2.imshow("res", merged)            
-cv2.imwrite("merged.jpg",merged)
+cv2.imwrite("merged_without_blending.jpg",merged)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
