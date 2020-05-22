@@ -27,10 +27,10 @@
 
 ## Affine Transformation
 
-<img src="https://latex.codecogs.com/gif.latex?O_t%3D%5Ctext%20%7B%20Onset%20event%20at%20time%20bin%20%7D%20t%20" /> 
+<img src="https://latex.codecogs.com/gif.latex?%5Cbegin%7Bbmatrix%7D%20x%27%20%5C%5C%20y%27%20%5Cend%7Bbmatrix%7D" /> 
 
 
-$$\begin{bmatrix} x' \\ y' \end{bmatrix}$$
+
 
 
 
