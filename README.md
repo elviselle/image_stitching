@@ -27,7 +27,7 @@
 
 ## Affine Transformation
 
-<img src="https://latex.codecogs.com/gif.latex?%5Cbegin%7Bbmatrix%7D%20x%27%20%5C%5C%20y%27%20%5Cend%7Bbmatrix%7D" /> 
+<img src="https://latex.codecogs.com/gif.latex?%5Cbegin%7Bbmatrix%7Dx%27%5C%5Cy%27%5Cend%7Bbmatrix%7D%20%3D%20%5Cbegin%7Bbmatrix%7Da%20%26%20b%20%26%20c%5C%5C%20d%20%26%20e%20%26%20f%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7Dx%5C%5Cy%5C%5C1%5Cend%7Bbmatrix%7D" /> 
 
 
 
