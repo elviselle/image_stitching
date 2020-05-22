@@ -41,6 +41,7 @@
 <img src="https://latex.codecogs.com/gif.latex?%5Cbegin%7Bbmatrix%7D369%5C%5C393%5C%5C209%5C%5C459%5C%5C251%5C%5C181%5Cend%7Bbmatrix%7D%20%3D%20%5Cbegin%7Bbmatrix%7D1257%20%26%20411%20%26%200%20%26%200%20%26%201%20%26%200%5C%5C0%260%261257%26%20411%260%261%5C%5C%201071%26%20480%26%200%20%26%200%20%26%201%20%26%200%5C%5C0%260%261071%26%20480%260%261%20%5C%5C1112%26%20192%26%200%20%26%200%20%26%201%20%26%200%5C%5C0%260%261112%26%20192%260%261%20%5C%5C%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7Da%5C%5Cb%5C%5Cc%5C%5Cd%5C%5Ce%5C%5Cf%5Cend%7Bbmatrix%7D" /> 
 
 numpy.libalg package可以解線性方程
+
     target = np.array(
     [[1257, 411+h_offset, 0, 0, 1, 0], 
      [0, 0, 1257, 411+h_offset, 0, 1], 
