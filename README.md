@@ -104,6 +104,6 @@ numpy.libalg package 可以解線性方程
 #### Linear Blending 好很多。交界處看不太出來了，雖然還有些鬼影。
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/blending.png)
 
-## 拼接結果 again
-![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/merged.jpg)
+## 拼接結果，裁切掉黑色部份
+![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/merged_corp.jpg)
 
