@@ -74,4 +74,4 @@ numpy.libalg package 可以解線性方程
 ## Bilinear Interpolation
 #### 由 target 空間轉換到 source 空間時，算出來的座標會是小數。它被四個點圍繞。
 #### 這時，到底要取 source 座標的哪個點的顏色來填到 target，就會用到 Bilinear Interpolation。
-
+![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/bilinear.png)
