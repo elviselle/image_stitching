@@ -12,7 +12,7 @@
 7. 車燈 (1192, 426) <-> (318, 406)
 
 
-A, B, C, D 四組實驗: 
+A, B, C, D 四組組合實驗: 
 A 組 Affine Transformation 特徵點組合
            IMG_1265 <-> IMG_5732
 1. 車尾 (1257, 411)  <->  (369, 393)
@@ -47,6 +47,7 @@ import cv2
 h_offset = 10
 
 print("利用三個點 算出座標轉換的關係式 用for跑轉換 以binear方法計算內插顏色 填到目標影像中")
+# A 組合
 target = np.array(
     [[1257, 411+h_offset, 0, 0, 1, 0], 
      [0, 0, 1257, 411+h_offset, 0, 1], 
@@ -54,7 +55,6 @@ target = np.array(
      [0, 0, 1071, 480+h_offset, 0, 1],
      [1112, 192+h_offset, 0, 0, 1, 0], 
      [0, 0, 1112, 192+h_offset, 0, 1]])
-
 src = np.array([369,393,209,459,251,181])
 
 param = np.linalg.solve(target,src)  # 解聯立方程 - Affine Transformation
@@ -70,7 +70,7 @@ pic2 = cv2.imread("imgs/IMG_5732.JPG")  #右
 print('pic1 shape:', pic1.shape)
 print('pic2 shape:', pic2.shape)
 
-# initial merged 變數，用以存放拼接影像
+# initial merged 變數，用以存放拼接影像，初始化成黑色
 merged_width = 2300   
 merged_height = 900
 merged = np.zeros((merged_height, merged_width, 3))
@@ -79,28 +79,11 @@ merged = np.zeros((merged_height, merged_width, 3))
 merged[h_offset:(pic1.shape[0]+h_offset), :pic1.shape[1], :] = pic1
 cv2.imwrite("merged_preprocess.jpg", merged)
 
-
-# print(pic1[0, 0])
-# print(merged[0, 0])
-
-# print(merged)
-
-# condidate = np.empty((0, 2), int)
-
-# for y in range(merged_height):
-#     for x in range(merged_width):
-#         t = np.array([[x,y,0,0,1,0], [0,0,x,y,0,1]])
-#         s = np.matmul(t,param)
-#         if s[0]>0 and s[0]<1271 and s[1]>0 and s[1]<847:
-#             print('[%4d,%4d]' % (y, x))
-#             condidate = np.append(condidate, np.array([[y, x]]), axis=0)
-# print('condidate:', condidate)
-
 for y in range(merged_height):
     print(y, ' ', end="")
     for x in range(merged_width):
 
-        # Inverse Mapping 座標轉換，由 merged 去計算要從 source 影像的哪個點取顏色來填
+        # Inverse Mapping 座標轉換，由 merged 去計算要從 source 影像(pic2)的哪個點取顏色來填
         t = np.array([[x,y,0,0,1,0], [0,0,x,y,0,1]])
         s = np.matmul(t, param)   # s 為轉換後之座標
 
@@ -140,14 +123,14 @@ for y in range(merged_height):
                 (xb-s[0])*(s[1]-yl)*blp[2] + \
                 (s[0]-xl)*(s[1]-yl)*brp[2] 
             
-            # 照片交集的部份，以 Linear Blending 方式計算顏色。點靠近左邊照片，左邊權重大。點靠近右邊照片，右邊權重大。
-            if merged[y, x, 0] > 0 or merged[y, x, 1] > 0 or merged[y, x, 2] > 0 :
-                # merged[y, x, 0] = int(itp_r)
-                # merged[y, x, 1] = int(itp_g)
-                # merged[y, x, 2] = int(itc_b)
-                # rate =  (x-812) / (1280-812) * 0.8
-                # rate =  (x-812) / (1280-812) * 0.5
-                weight =  (x-812) / (1280-812)  # blending 計算
+            # 照片交集的部份，以 Linear Blending 方式計算顏色比例。
+            # 點靠近左邊照片，左邊權重大。點靠近右邊照片，右邊權重大。
+            if merged[y, x, 0] > 0 or merged[y, x, 1] > 0 or merged[y, x, 2] > 0 :   # 3 channel 有一維不是0，表是是交集處。此處有點鳥，應該有更好的判斷方法。
+
+                weight =  (x-812) / (1280-812)  # blending 計算，這裡也有點鳥，寫死了，手工找了交集範圍
+                # weight =  (x-812) / (1280-812) * 0.8    # for testing
+                # weight =  (x-812) / (1280-812) * 0.5    # for testing
+
                 merged[y, x, 0] = int(merged[y, x, 0] * (1-weight) + int(itp_r) * weight)  # blending 計算
                 merged[y, x, 1] = int(merged[y, x, 1] * (1-weight) + int(itp_g) * weight)  # blending 計算
                 merged[y, x, 2] = int(merged[y, x, 2] * (1-weight) + int(itp_b) * weight)  # blending 計算
@@ -160,7 +143,6 @@ for y in range(merged_height):
             print('.', end="")  #只是輸出計算進度用
     print('')
 
-            
 merged = merged.astype(np.uint8)
 
 # minInColumns = np.amin(merged[:,:,0], axis=0)
