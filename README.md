@@ -89,7 +89,7 @@ numpy.libalg package 可以解線性方程
     
     target_color = 92 * 0.8 * 0.7 +
         83 * 0.2 * 0.7 + 
-        9 * 0.3 * 0.8 +
+        9 * 0.8 * 0.3 +
         53 * 0.2 * 0.3
 
 # Linear Blending
