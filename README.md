@@ -88,3 +88,10 @@ numpy.libalg package 可以解線性方程
         83 * 0.2 * 0.7 + 
         9 * 0.3 * 0.8 +
         53 * 0.2 * 0.3
+
+# Linear Blending
+#### 拼起來後，有點糟糕。接的很不順。
+![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/interception.png)
+
+#### Linear Blending後好很多。雖然還有些鬼影。
+![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/blending.png)
