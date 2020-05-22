@@ -36,7 +36,7 @@
 <img src="https://latex.codecogs.com/gif.latex?x%27%3D%20ax%20%2B%20by%20%2B%20c" /> 
 <img src="https://latex.codecogs.com/gif.latex?y%27%3D%20dx%20%2B%20ey%20%2B%20f" /> 
 
-#### 要解a, b, c, d, e, f，需要 6 個關係式，而三個點會有 6 個式子。可再整理成下面的聯位方程，然後解出 6 個未知數。
+#### 要解a, b, c, d, e, f，需要 6 個關係式，而三個點會有 6 個式子。可再整理成下面的聯立方程，然後解出 6 個未知數。
 #### 以組合A為例：
 
 <!-- \begin{bmatrix}369\\393\\209\\459\\251\\181\end{bmatrix} = \begin{bmatrix}1257 & 411 & 0 & 0 & 1 & 0\\0&0&1257& 411&0&1\\ 1071& 480& 0 & 0 & 1 & 0\\0&0&1071& 480&0&1 \\1112& 192& 0 & 0 & 1 & 0\\0&0&1112& 192&0&1 \\\end{bmatrix} \begin{bmatrix}a\\b\\c\\d\\e\\f\end{bmatrix} --> 
