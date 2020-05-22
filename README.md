@@ -59,10 +59,9 @@ numpy.libalg package 可以解線性方程
 
 ## Inverse Mapping
 
-#### 先做一張大一點的黑色影像，把左邊(pic1)填進來。先叫它 target。
+#### 先做一張大一點的黑色影像，把左邊(pic1)填進來。先叫它 target。之後我們用 Inverse Mapping 方式把右邊填上。
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/merged_preprocess.jpg)
 
-#### Forward 方法會有空隙，所以用 Inverse Mapping方式。
-#### Inverse Mapping 指由要合成照片的空間(target)上的每一個點，去算它在 Source (pic2) 座標系的哪個位置。如果可以落在 source 的影像範圍內，就取它的顏色過來填到 target 上。就可以避免 target 有空隙沒填到顏色。
+#### Inverse Mapping 指由要合成照片的空間(target)上的每一個點，去算它在 Source (pic2) 座標系的哪個位置。如果可以落在 source 的影像範圍內，就取它的顏色過來填到 target 上。可以避免 Forward Mapping 時 target 有空隙沒填到顏色。
 
 
