@@ -98,7 +98,7 @@ numpy.libalg package 可以解線性方程
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/interception.png)
 
 #### 交集處，左圖顏色、右圖顏色各乘 0.5，再相加。好一點。
-![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/blending_hafl.png)
+![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/blending_half.png)
 
 #### Linear Blending: 交集處，若點靠近左圖，左圖顏色的權重就取大一點，若靠近右圖，右圖顏色的權重就取大一點。
 #### Linear Blending 好很多。交界處看不太出來了，雖然還有些鬼影。
