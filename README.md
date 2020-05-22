@@ -40,7 +40,7 @@
 <!-- \begin{bmatrix}369\\393\\209\\459\\251\\181\end{bmatrix} = \begin{bmatrix}1257 & 411 & 0 & 0 & 1 & 0\\0&0&1257& 411&0&1\\ 1071& 480& 0 & 0 & 1 & 0\\0&0&1071& 480&0&1 \\1112& 192& 0 & 0 & 1 & 0\\0&0&1112& 192&0&1 \\\end{bmatrix} \begin{bmatrix}a\\b\\c\\d\\e\\f\end{bmatrix} --> 
 <img src="https://latex.codecogs.com/gif.latex?%5Cbegin%7Bbmatrix%7D369%5C%5C393%5C%5C209%5C%5C459%5C%5C251%5C%5C181%5Cend%7Bbmatrix%7D%20%3D%20%5Cbegin%7Bbmatrix%7D1257%20%26%20411%20%26%200%20%26%200%20%26%201%20%26%200%5C%5C0%260%261257%26%20411%260%261%5C%5C%201071%26%20480%26%200%20%26%200%20%26%201%20%26%200%5C%5C0%260%261071%26%20480%260%261%20%5C%5C1112%26%20192%26%200%20%26%200%20%26%201%20%26%200%5C%5C0%260%261112%26%20192%260%261%20%5C%5C%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7Da%5C%5Cb%5C%5Cc%5C%5Cd%5C%5Ce%5C%5Cf%5Cend%7Bbmatrix%7D" /> 
 
-numpy.libalg package可以解線性方程
+numpy.libalg package 可以解線性方程
 
     target = np.array(
         [[1257, 411, 0, 0, 1, 0], 
@@ -51,7 +51,8 @@ numpy.libalg package可以解線性方程
          [0, 0, 1112, 192, 0, 1]])
     src = np.array([369,393,209,459,251,181])
     
-    param = np.linalg.solve(target, src)  # 解聯立方程
+    param = np.linalg.solve(target, src)  # 解聯立方程 - 求出座標轉換矩陣
+    pring(param)
 
 解出 [a, b, e, d, e, f] = [ 8.51061314e-01 -2.46752991e-02  3.42931473e-03  9.65765979e-01 -6.90395771e+02 -1.78981257e+01 ]
 
