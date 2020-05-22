@@ -127,12 +127,11 @@ for y in range(merged_height):
             # 點靠近左邊照片，左邊權重大。點靠近右邊照片，右邊權重大。
             if merged[y, x, 0] > 0 or merged[y, x, 1] > 0 or merged[y, x, 2] > 0 :   # 3 channel 有一維不是0，表是是交集處。此處有點鳥，應該有更好的判斷方法。
 
+                # weight = 0.5      # 交集處各取一半
                 weight =  (x-812) / (1280-812)  # blending 計算，這裡也有點鳥，寫死了，手工找了交集範圍
                 # weight =  (x-812) / (1280-812) * 0.8    # for testing
                 # weight =  (x-812) / (1280-812) * 0.5    # for testing
                 
-                weight = 0.5
-
                 merged[y, x, 0] = int(merged[y, x, 0] * (1-weight) + int(itp_r) * weight)  # blending 計算
                 merged[y, x, 1] = int(merged[y, x, 1] * (1-weight) + int(itp_g) * weight)  # blending 計算
                 merged[y, x, 2] = int(merged[y, x, 2] * (1-weight) + int(itp_b) * weight)  # blending 計算
@@ -150,11 +149,12 @@ for y in range(merged_height):
     print('')
 
 merged = merged.astype(np.uint8)
+merged_corp = merged[14:864, :, :]
 
 # minInColumns = np.amin(merged[:,:,0], axis=0)
 
 cv2.imshow("res", merged)            
-cv2.imwrite("merged_half_blending.jpg",merged)
+cv2.imwrite("merged_corp.jpg",merged_corp)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
