@@ -75,3 +75,11 @@ numpy.libalg package 可以解線性方程
 #### 由 target 空間轉換到 source 空間時，算出來的座標會是小數。它被四個點圍繞。
 #### 這時，到底要取 source 座標的哪個點的顏色來填到 target，就會用到 Bilinear Interpolation。
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/bilinear.png)
+
+假設 target image 某一點座標轉換後，落在 source image 的 (133.2, 56.3)，
+則要填回的 target image 的顏色等於
+    
+    target_color = 左上角鄰居顏色 * 左上角權重 +  
+        右上上角鄰居顏色 * 右上角權重 +
+        左下角鄰居顏色 * 左下角權重 +
+        右下角鄰居顏色 * 右下角權重
