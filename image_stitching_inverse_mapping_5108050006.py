@@ -44,7 +44,7 @@ import math
 import cv2
 
 
-h_offset = 10
+h_offset = 50
 
 print("利用三個點 算出座標轉換的關係式 用for跑轉換 以binear方法計算內插顏色 填到目標影像中")
 # A 組合
@@ -55,7 +55,7 @@ target = np.array(
      [0, 0, 1071, 480+h_offset, 0, 1],
      [1112, 192+h_offset, 0, 0, 1, 0], 
      [0, 0, 1112, 192+h_offset, 0, 1]])
-src = np.array([369,393,209,459,251,181])
+src = np.array([369,393,209, 459,251,181])
 
 param = np.linalg.solve(target,src)  # 解聯立方程 - Affine Transformation
 print(param)
@@ -72,7 +72,7 @@ print('pic2 shape:', pic2.shape)
 
 # initial merged 變數，用以存放拼接影像，初始化成黑色
 merged_width = 2300   
-merged_height = 900
+merged_height = 1000
 merged = np.zeros((merged_height, merged_width, 3))
 
 # 將左邊照片pic1先放入merged
@@ -126,6 +126,9 @@ for y in range(merged_height):
             # 照片交集的部份，以 Linear Blending 方式計算顏色比例。
             # 點靠近左邊照片，左邊權重大。點靠近右邊照片，右邊權重大。
             if merged[y, x, 0] > 0 or merged[y, x, 1] > 0 or merged[y, x, 2] > 0 :   # 3 channel 有一維不是0，表是是交集處。此處有點鳥，應該有更好的判斷方法。
+            
+                # print(x)
+                # break
 
                 # weight = 0.5      # 交集處各取一半
                 weight =  (x-812) / (1280-812)  # blending 計算，這裡也有點鳥，寫死了，手工找了交集範圍
@@ -138,7 +141,7 @@ for y in range(merged_height):
             else:
                 merged[y, x, 0] = int(itp_r)  # 未在交集內，直接用 binear interpolation 的顏色
                 merged[y, x, 1] = int(itp_g)
-                merged[y, x, 2] = int(itp_b)
+                merged[y, x, 2] = int(itp_b) 
 
             # merged[y, x, 0] = int(itp_r)  
             # merged[y, x, 1] = int(itp_g)
@@ -149,12 +152,12 @@ for y in range(merged_height):
     print('')
 
 merged = merged.astype(np.uint8)
-merged_corp = merged[14:864, :, :]
+# merged_corp = merged[14:864, :, :]
 
 # minInColumns = np.amin(merged[:,:,0], axis=0)
 
 cv2.imshow("res", merged)            
-cv2.imwrite("merged_corp.jpg",merged_corp)
+cv2.imwrite("merged_A.jpg",merged)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
