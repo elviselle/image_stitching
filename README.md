@@ -1,6 +1,6 @@
 # 影像拼接
 ### 自行計算 Affine Transformation, Bilinear Interpolation 與 Linear Blending
-> 本文連結 
+> 本文連結 QR Code
 
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/url_qrcode.png)
 
