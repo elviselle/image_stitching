@@ -79,7 +79,7 @@ numpy.libalg package 可以解線性方程
 #### 這時，到底要取 source 座標的哪個點的顏色來填到 target，可以用 Bilinear Interpolation 方法。
 ![](https://github.com/elviselle/image_stitching/blob/master/.readme_imgs/bilinear.png)
 
-<img src="https://latex.codecogs.com/gif.latex?f%28x%2Cy%29%2A%281-a%29%2A%281-b%29%20%2B%20f%28x%2B1%2Cy%29%2Aa%2A%281-b%29%20%2B%20f%28x%2C%20y%2B1%29%2A%281-a%29%2Ab%2B%20%5C%5C%20f%28x%2B1%2C%20y%2B1%29%2Aa%2Ab" />
+<img src="https://latex.codecogs.com/gif.latex?%5Cbinoppenalty%3D10000%5Crelpenalty%3D10000%20f%28x%2Cy%29%2A%281-a%29%2A%281-b%29%20%2B%20f%28x%2B1%2Cy%29%2Aa%2A%281-b%29%20%2B%20f%28x%2C%20y%2B1%29%2A%281-a%29%2Ab%2Bf%28x%2B1%2C%20y%2B1%29%2Aa%2Ab" />
 
 假設 target image 某一點座標轉換後，落在 source image 的 (133.2, 56.3)，
 則要填回的 target image 的顏色等於
