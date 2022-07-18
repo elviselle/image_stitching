@@ -57,7 +57,7 @@ numpy.libalg package 可以解線性方程
     src = np.array([369,393,209,459,251,181])  #右圖座標
     
     param = np.linalg.solve(target, src)  # 解聯立方程 - 求出座標轉換矩陣
-    pring(param)
+    print(param)
 
 解出 [a, b, e, d, e, f] = [ 8.51061314e-01 -2.46752991e-02  3.42931473e-03  9.65765979e-01 -6.90395771e+02 -1.78981257e+01 ]
 
